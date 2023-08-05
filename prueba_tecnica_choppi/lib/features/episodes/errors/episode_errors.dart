@@ -1,0 +1,1 @@
+class EpisodeNotFound implements Exception{}
