@@ -1,6 +1,6 @@
 # prueba_tecnica_choppi
 <p align="center">
-  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sensacine.com%2Fseries%2Fserie-11561%2F&psig=AOvVaw2it4XoOzGYHX7HfrTwFHpT&ust=1691337969722000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNj39InzxYADFQAAAAAdAAAAABAE" width="200" alt="Nest Logo" /></a>
+ <a href="https://www.sensacine.com/series/serie-11561/" target="blank"><img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fes.web.img3.acsta.net%2Fpictures%2F18%2F10%2F31%2F17%2F34%2F2348073.jpg&tbnid=BJmdRdYUyCGG6M&vet=12ahUKEwiDi_eL9sWAAxURhu4BHRTkAqcQMygAegUIARDtAQ..i&imgrefurl=https%3A%2F%2Fwww.sensacine.com%2Fseries%2Fserie-11561%2F&docid=AFXS1Mit9lXteM&w=1000&h=1500&q=rick%20y%20morty&hl=es&ved=2ahUKEwiDi_eL9sWAAxURhu4BHRTkAqcQMygAegUIARDtAQ" width="200" alt="Rick y Morty Logo" /></a>
 </p>
 Rick y Morty App
 
