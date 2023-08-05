@@ -1,2 +1,2 @@
-# prueba-tecnica-choppi
+# Prueba-tecnica-choppi
 Prueba Técnica Choppi Api Rick y Morty
