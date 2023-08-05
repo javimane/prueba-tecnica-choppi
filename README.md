@@ -31,8 +31,8 @@ La aplicación tiene las siguientes funcionalidades:
 - Detalles del Episodio: Al hacer clic en un episodio de la lista, se muestra una pantalla con los detalles completos del episodio, incluyendo la sinopsis y los personajes que aparecen en ese episodio.
 
 ## APi usada en el proyecto:
-Login y seguridad: https://dummyjson.com/
-Datos: https://rickandmortyapi.com/api
+ - Login y seguridad: https://dummyjson.com/
+ - Datos: https://rickandmortyapi.com/api
 
 ## Cómo Ejecutar la Aplicación
 
