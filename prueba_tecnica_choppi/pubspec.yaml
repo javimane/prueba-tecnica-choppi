@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^4.0.3
   shared_preferences: ^2.0.18
   connectivity_plus: ^4.0.2
+  flutter_neumorphic: ^3.2.0
   
   
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 // Clase que representa un elemento del menú
 class MenuItem {
   final String title; // Título del elemento del menú

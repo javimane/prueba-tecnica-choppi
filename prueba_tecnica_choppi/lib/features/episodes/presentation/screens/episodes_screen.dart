@@ -70,19 +70,28 @@ class _EpisodesViewState extends ConsumerState {
 Widget build(BuildContext context) {
   final episodesState = ref.watch(episodesProvider); //watch es estar pendiente de...
 
-  
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: ListView.builder(
-            controller: scrollController,
-            physics: const BouncingScrollPhysics(),
-            itemCount: episodesState.episodes.length,
-            itemBuilder: (context, index) {
-              final episode = episodesState.episodes[index];
+      return    Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 0),
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/fondogalaxia.avif"),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: ListView.builder(
+              controller: scrollController,
+              physics: const BouncingScrollPhysics(),
+              itemCount: episodesState.episodes.length,
+              itemBuilder: (context, index) {
+                final episode = episodesState.episodes[index];
 
-              return EpisodeCard(episode: episode);
-            },
-          ),
-        );
+                  return EpisodeCard(episode: episode);
+                },
+              ),
+            ),
+          );
+
+        
       }
     }

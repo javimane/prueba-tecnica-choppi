@@ -41,43 +41,14 @@ class HomeScreen extends ConsumerWidget {
           ),
         ),
         // Builder para mostrar el AlertDialog según el estado de conexión
-        child: Builder(
-          builder: (context) {
-            // Verificar el estado de la conexión y mostrar un mensaje si no hay conexión a Internet
-            if (connectivityResult.when(
-              data: (result) => result == ConnectivityResult.none,
-              loading: () => false,
-              error: (error, stackTrace) => false,
-            )) {
-              // Mostrar el AlertDialog directamente
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: const Text('Sin conexión a Internet'),
-                  content: const Text('Por favor, asegúrate de estar conectado a una red.'),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('Aceptar'),
-                    ),
-                  ],
-                ),
-              );
-
-              // No es necesario retornar nada aquí, ya que showDialog mostrará el AlertDialog
-              return const SizedBox.shrink();
-            } else {
+        
               // Mostrar el contenido normal de _HomeView
-              return const _HomeView();
+             child: const _HomeView())
+      );
             }
-          },
-        ),
-      ),
-    );
+     
   }
-}
+
 
 // Clase _HomeView que muestra la lista de elementos en la pantalla principal
 class _HomeView extends StatefulWidget {
@@ -135,6 +106,7 @@ class _CustomListTile extends StatelessWidget {
         ),
       ),
       onTap: () {
+       
         context.push(menuItem.link);
       },
     );

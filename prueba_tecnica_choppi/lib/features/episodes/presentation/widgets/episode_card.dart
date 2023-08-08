@@ -24,7 +24,7 @@ class EpisodeCard extends StatelessWidget {
           ),
           color: Colors.white,
       child: Container(
-        width: (size.width) * 0.9,
+        width: (size.width) * 0.95,
         decoration: BoxDecoration(
           border: Border.all(color: const Color.fromARGB(255, 14, 146, 228), width: 4),
           borderRadius: BorderRadius.circular(8),

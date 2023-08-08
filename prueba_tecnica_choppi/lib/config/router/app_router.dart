@@ -1,6 +1,8 @@
 
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
 
 
 import '../../features/auth/auth.dart';
@@ -45,10 +47,40 @@ final goRouterProvider = Provider((ref) {
         path: '/characters',
         builder: (context, state) => const CharactersScreen(),
       ),
-       GoRoute(
-        path: '/episodes',
-        builder: (context, state) => const EpisodesScreen(),
-      ),
+      GoRoute(
+            path: '/episodes',
+            pageBuilder: (context, state) {
+           
+              return CustomTransitionPage(
+                key: state.pageKey,
+                child: const EpisodesScreen(),
+                transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                     
+                     const begin = Offset(0.0, 1.0);
+                      const end = Offset.zero;
+                      const curve = Curves.bounceIn;
+
+                   //   final tween = Tween(begin: begin, end: end);
+                      final curvedAnimation = CurvedAnimation(
+                        parent: animation,
+                        curve: curve,
+                      );
+
+                   return   RotationTransition(
+                    turns: curvedAnimation,
+                    child: ScaleTransition(
+                      scale: animation,
+                      child: FadeTransition(
+                        opacity: animation,
+                        child: child,
+            ),
+          ),
+        );
+              },
+            );
+          },
+        ),
+      
       GoRoute(
         path: '/character/:id',
         builder: (context, state) => CharacterScreen(
@@ -57,6 +89,7 @@ final goRouterProvider = Provider((ref) {
         ),
       ),
     ],
+   
 
     redirect: (context, state) {
       
