@@ -13,8 +13,8 @@ La Prueba Técnica Choppi es una aplicación móvil que permite explorar informa
 La aplicación tiene las siguientes funcionalidades:
 
 - Vista Inicial: se muestra la Pantalla de Login para logearse hay que colocar:
-  Usuario: kminchelle
-  Contraseña: 0lelplR
+ - Usuario: kminchelle
+ - Contraseña: 0lelplR
 
 - Vista Registro: Muestra la pantalla de Registro en caso que el usuario no tenga cuenta, solo es para la vista pero no se puede crear una cuenta nueva.
 - Vista Home: Una vez ingresado el usuario se muestra la pantalla HomeView. En este home a la izquierda se despliega un menú desplegable donde se puede cerrar sesión.
