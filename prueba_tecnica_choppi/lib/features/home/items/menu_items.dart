@@ -22,8 +22,8 @@ const appMenuItems = <MenuItem>[
     title: 'Characters',
     link: '/characters',
     icon: ImageIconWidget(
-      imagePath: 'assets/images/personaje.png',
-      size: 48.0,
+      imagePath: 'assets/images/wired-lineal-21-avatar.gif',
+      size: 80.0,
     ),
   ),
 
@@ -32,8 +32,8 @@ const appMenuItems = <MenuItem>[
     title: 'Episodes',
     link: '/episodes',
     icon: ImageIconWidget(
-      imagePath: 'assets/images/capitulo.png',
-      size: 48.0,
+      imagePath: 'assets/images/wired-lineal-62-film.gif',
+      size: 80.0,
     ),
   ),
 ];

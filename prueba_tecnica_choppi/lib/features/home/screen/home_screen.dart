@@ -33,7 +33,13 @@ class HomeScreen extends ConsumerWidget {
       drawer: SideMenu(scaffoldKey: scaffoldKey),
       key: scaffoldKey,
       appBar: AppBar(
-        title: const Text('Rick y Morty'),
+        title: const Center(
+            child: Padding(
+              padding: EdgeInsets.only(right: 50), // Ajusta el valor según tu preferencia
+                child: Text('Rick y Morty'),
+            ),
+          ),
+
       ),
       // Contenedor con una imagen de fondo
       body: ConnectivityWidgetWrapper(
@@ -107,26 +113,26 @@ class _CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
+   // final colors = Theme.of(context).colorScheme;
  final size = MediaQuery.of(context).size;
  return Container(
-      margin: EdgeInsets.all(15),
+      margin: const EdgeInsets.all(15),
       child: ChoiceChip3D(
          
         height: (size.height) * 0.2,
         width: (size.width) * 0.80,
         style: ChoiceChip3DStyle(
-          topColor: Color.fromARGB(255, 206, 201, 201),
+          topColor: const Color.fromARGB(255, 206, 201, 201),
           backColor: Colors.red,
           borderRadius: BorderRadius.circular(3)
         ),
         selected: false,
         child: Column(
           children: [
-            SizedBox(height: 40,),
+            const SizedBox(height: 40,),
             menuItem.icon,
-            SizedBox(height: 8),
-            Text(menuItem.title, style: TextStyle(fontSize: 25, color: Colors.black)),
+            const SizedBox(height: 5),
+            Text(menuItem.title, style: const TextStyle(fontSize: 25, color: Colors.black)),
           ],
         ),
         onSelected: () {
