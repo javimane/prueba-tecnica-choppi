@@ -1,15 +1,24 @@
 
-import 'dart:async';
 
-import 'package:connectivity_plus/connectivity_plus.dart';
+
+
+import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+final connectivityProvider = StateNotifierProvider<ConnectivityNotifier, bool>((ref) => ConnectivityNotifier());
+
+class ConnectivityNotifier extends StateNotifier<bool> {
+  ConnectivityNotifier() : super(false);
+
+  void checkConnectivity() async {
+    state = await ConnectivityWrapper.instance.isConnected;
+  }
+}
 
 
 
 
-
-final connectivityProvider = StreamProvider<ConnectivityResult>((ref) {
+/*final connectivityProvider = StreamProvider<ConnectivityResult>((ref) {
   final Connectivity _connectivity = Connectivity();
   final StreamController<ConnectivityResult> controller = StreamController<ConnectivityResult>();
 
@@ -37,7 +46,7 @@ final connectivityProvider = StreamProvider<ConnectivityResult>((ref) {
 
   return controller.stream;
 });
-
+*/
 /*final connectivityProvider = StreamProvider<ConnectivityResult>((ref) {
   final connectivity = Connectivity();
   return connectivity.onConnectivityChanged;

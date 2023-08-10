@@ -1,3 +1,4 @@
+import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -106,17 +107,31 @@ class _RegisterForm extends StatelessWidget {
     
           const SizedBox( height: 30 ),
 
-          SizedBox(
-            width: double.infinity,
-            height: 60,
-            child: CustomFilledButton(
-              text: 'Crear',
-              buttonColor: Colors.black,
-              
-              onPressed: (){
+          ConnectivityWidgetWrapper(
+            stacked: false,
+            offlineWidget: const SizedBox(
+              width: double.infinity,
+              height: 60,
+              child: CustomFilledButton(
+                  text: 'Connectando...',
+                  onPressed: null,
+                  textColor: Colors.red,
+                  
+                ),
+            ),
 
-              },
-            )
+            child: SizedBox(
+              width: double.infinity,
+              height: 60,
+              child: CustomFilledButton(
+                text: 'Crear',
+                buttonColor: Colors.black,
+                
+                onPressed: (){
+          
+                },
+              )
+            ),
           ),
 
           const Spacer( flex: 2 ),

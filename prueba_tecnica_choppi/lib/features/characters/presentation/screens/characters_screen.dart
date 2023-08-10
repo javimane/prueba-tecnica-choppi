@@ -1,4 +1,5 @@
 
+import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -93,20 +94,25 @@ class _CharactersViewState extends ConsumerState {
     final charactersState =
         ref.watch(charactersProvider); //watch es estar pendiente de...
     
-      return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: ListView.builder(
-          controller: scrollController,
-          physics: const BouncingScrollPhysics(),
-          itemCount: charactersState.characters.length,
-          itemBuilder: (context, index) {
-            final character = charactersState.characters[index];
-            return GestureDetector(
-                onTap: () => context.push('/character/${character.id}'),
-                child: CharacterCard(character: character));
-              },
+      return ConnectivityWidgetWrapper(
+        disableInteraction: true,
+        alignment: Alignment.topCenter,
+        message: 'No estas conectado a internet',
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: ListView.builder(
+            controller: scrollController,
+            physics: const BouncingScrollPhysics(),
+            itemCount: charactersState.characters.length,
+            itemBuilder: (context, index) {
+              final character = charactersState.characters[index];
+              return GestureDetector(
+                  onTap: () => context.push('/character/${character.id}'),
+                  child: CharacterCard(character: character));
+                },
+              ),
             ),
-          );
+      );
         }
       }
    

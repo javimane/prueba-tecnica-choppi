@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:animate_do/animate_do.dart';
+import 'package:connectivity_checker/connectivity_checker.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -36,19 +37,24 @@ class CharacterScreenState extends ConsumerState<CharacterScreen> {
       return const Scaffold(
           body: Center(child: CircularProgressIndicator(strokeWidth: 2)));
     }
-           return Scaffold( // Mostrar el contenido normal de _CharacterDetails
-            body: CustomScrollView(
-              physics: const ClampingScrollPhysics(),
-              slivers: [
-                _CustomSliverAppBar(character: character),
-                SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) => _CharacterDetails(character: character),
-                    childCount: 1,
+           return ConnectivityWidgetWrapper(
+            disableInteraction: true,
+            alignment: Alignment.topCenter,
+            message: 'No estas conectado a internet',
+             child: Scaffold( // Mostrar el contenido normal de _CharacterDetails
+              body: CustomScrollView(
+                physics: const ClampingScrollPhysics(),
+                slivers: [
+                  _CustomSliverAppBar(character: character),
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) => _CharacterDetails(character: character),
+                      childCount: 1,
+                    ),
                   ),
-                ),
-              ],
-            ));
+                ],
+              )),
+           );
           }
         }
     

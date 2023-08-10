@@ -1,3 +1,4 @@
+import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,10 +23,12 @@ class MainApp extends ConsumerWidget {
 
     final appRouter = ref.watch( goRouterProvider );
 
-    return MaterialApp.router(
-      routerConfig: appRouter,
-      theme: AppTheme().getTheme(),
-      debugShowCheckedModeBanner: false,
+    return ConnectivityAppWrapper(
+      app: MaterialApp.router(
+        routerConfig: appRouter,
+        theme: AppTheme().getTheme(),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

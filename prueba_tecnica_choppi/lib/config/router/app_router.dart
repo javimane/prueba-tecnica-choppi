@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 
 
+
 import '../../features/auth/auth.dart';
 import '../../features/auth/presentation/providers/auth_provider.dart';
 import '../../features/characters/presentation/screens/character_screen.dart';
@@ -45,7 +46,7 @@ final goRouterProvider = Provider((ref) {
       ),
        GoRoute(
         path: '/characters',
-        builder: (context, state) => const CharactersScreen(),
+        builder: (context, state) =>  const CharactersScreen(),
       ),
       GoRoute(
             path: '/episodes',

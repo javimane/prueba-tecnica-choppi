@@ -1,5 +1,6 @@
 
 
+import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -70,27 +71,32 @@ class _EpisodesViewState extends ConsumerState {
 Widget build(BuildContext context) {
   final episodesState = ref.watch(episodesProvider); //watch es estar pendiente de...
 
-      return    Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 0),
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/fondogalaxia.avif"),
-                fit: BoxFit.cover,
+      return ConnectivityWidgetWrapper(
+        disableInteraction: true,
+        alignment: Alignment.topCenter,
+        message: 'No estas conectado a internet',
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 0),
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/fondogalaxia.avif"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: ListView.builder(
+                controller: scrollController,
+                physics: const BouncingScrollPhysics(),
+                itemCount: episodesState.episodes.length,
+                itemBuilder: (context, index) {
+                  final episode = episodesState.episodes[index];
+      
+                    return EpisodeCard(episode: episode);
+                  },
+                ),
               ),
             ),
-            child: ListView.builder(
-              controller: scrollController,
-              physics: const BouncingScrollPhysics(),
-              itemCount: episodesState.episodes.length,
-              itemBuilder: (context, index) {
-                final episode = episodesState.episodes[index];
-
-                  return EpisodeCard(episode: episode);
-                },
-              ),
-            ),
-          );
+      );
 
         
       }

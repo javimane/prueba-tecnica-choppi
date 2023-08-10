@@ -39,7 +39,10 @@ dependencies:
   google_fonts: ^4.0.3
   shared_preferences: ^2.0.18
   connectivity_plus: ^4.0.2
-  flutter_neumorphic: ^3.2.0
+  flutter_3d_choice_chip: ^0.1.4
+  flutter_custom_cards: ^0.2.1
+  connectivity_checker: ^1.1.0
+  top_snackbar_flutter: ^3.1.0
   
   
 
