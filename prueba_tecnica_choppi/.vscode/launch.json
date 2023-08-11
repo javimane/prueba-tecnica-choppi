@@ -1,9 +1,43 @@
+/*{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Flutter-All",
+        "request": "launch",
+        "preLaunchTask": "Flutter-Launch-All",
+        "type": "dart"
+      },
+      {
+        "name": "Flutter-iOS",
+        "request": "launch",
+        "preLaunchTask": "Flutter-Launch-iOS",
+        "type": "dart"
+      },
+      {
+        "name": "Flutter-Android",
+        "request": "launch",
+        "preLaunchTask": "Flutter-Launch-Android",
+        "type": "dart"
+      },
+      {
+        "name": "Flutter-Web",
+        "request": "launch",
+        "preLaunchTask": "Flutter-Launch-Web",
+        "type": "dart"
+      }
+    ]
+  }*/
+
+
+
+
 {
     // Use IntelliSense para saber los atributos posibles.
     // Mantenga el puntero para ver las descripciones de los existentes atributos.
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "prueba_tecnica_choppi",
             "request": "launch",

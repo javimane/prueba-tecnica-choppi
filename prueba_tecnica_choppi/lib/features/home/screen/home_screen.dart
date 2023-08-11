@@ -123,7 +123,7 @@ class _CustomListTile extends StatelessWidget {
         width: (size.width) * 0.80,
         style: ChoiceChip3DStyle(
           topColor: const Color.fromARGB(255, 206, 201, 201),
-          backColor: Colors.red,
+          backColor: const Color.fromARGB(255, 34, 29, 29),
           borderRadius: BorderRadius.circular(3)
         ),
         selected: false,
